@@ -1,3 +1,8 @@
+:root {
+	--color_darkSide: #6a0d07;
+	--color_lightSide: #73800a;
+}
+
 body {
 	background-color: #222;
 }

@@ -11,6 +11,7 @@ const extractCss = new ExtractTextPlugin("css/[name].css");
 const extractModuleCss = new ExtractTextPlugin("css/bundle.min.css");
 
 module.exports = {
+//	devtool: "cheap-eval-source-map",
 	entry: {
 		index: resPath("src/js/index.js")
 	},
@@ -33,7 +34,7 @@ module.exports = {
 						loader: "css-loader",
 						options: {
 							modules: true,
-							localIdentName: "[name]__[local]___[hash:base64:5]"
+							localIdentName: "[name]-[local]"
 						}
 					}
 				}),

@@ -1,4 +1,4 @@
-export default class Piece {
+export default class BasePiece {
 
 	constructor(startX, startY) {
 

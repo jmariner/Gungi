@@ -3,3 +3,4 @@
 !/**/.gitkeep
 *.sublime-workspace
 /old_src/
+/yarn-error.log

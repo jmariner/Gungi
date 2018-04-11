@@ -15,7 +15,7 @@ Based off this: http://japanesechess.org/shogi2014/
 - Hidden Dragon / Dragon King
 - Prodigy / Pheonix
 - Archer / Arrow
-- Soldier / Broze, Silver, Gold
+- Soldier / Bronze, Silver, Gold
 
 ### Starting Pieces, total 23 (only front)
 - 1x Commander
@@ -40,4 +40,3 @@ Based off this: http://japanesechess.org/shogi2014/
 - Each piece is black/white depending on player
 - Name of piece is on piece, no actual art
 	- Originally a Japanese symbol for each, what do?
-
