@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
-import BasePiece from "js/objects/BasePiece";
-
 import CSSModules from "react-css-modules";
 import styles from "css/components/Square.css";
+
+import Piece from "js/components/Piece";
+import BasePiece from "js/objects/BasePiece";
 
 class Square extends React.Component {
 
@@ -18,6 +19,18 @@ class Square extends React.Component {
 
 	constructor(props) {
 		super(props);
+		this.renderPiece = this.renderPiece.bind(this);
+	}
+
+	renderPiece(piece, tier) {
+		return (
+			<Piece
+				key={this.props.location + "-" + tier}
+				piece={piece}
+				tier={tier}
+				inHand={false}
+			/>
+		)
 	}
 
 	render() {
@@ -27,11 +40,7 @@ class Square extends React.Component {
 					{this.props.location}
 				</div>
 				<div styleName="pieces">
-					{
-						this.props.pieces.map(
-							(piece, tier) => `T${tier+1} ${piece == null ? "null" : piece.constructor.name}`
-						).join("\n")
-					}
+					{this.props.pieces.map(this.renderPiece)}
 				</div>
 			</div>
 		);

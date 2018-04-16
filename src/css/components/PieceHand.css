@@ -1,0 +1,17 @@
+.main {
+
+}
+
+.title {
+	text-align: center;
+	text-decoration: underline;
+	margin-bottom: 8px;
+}
+
+.pieces {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-right: -8px;
+}

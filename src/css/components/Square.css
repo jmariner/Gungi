@@ -1,7 +1,7 @@
 .main {
 	/* TEMPORARY */
-	width: 50px;
-	height: 50px;
+	width: var(--size_square);
+	height: var(--size_square);
 	border: 1px solid black;
 	display: inline-block;
 	position: relative;
@@ -27,8 +27,5 @@
 }
 
 .pieces {
-	font-size: 10px;
-	color: white;
-	white-space: pre;
-	text-align: center;
+
 }

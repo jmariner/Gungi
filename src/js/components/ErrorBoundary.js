@@ -1,6 +1,6 @@
 import React from "react";
 import CSSModules from "react-css-modules";
-import { Row, Col, Card, CardTitle, CardText, Button, Collapse } from "reactstrap";
+import { Container, Row, Col, Card, CardTitle, CardText, Button, Collapse } from "reactstrap";
 import styles from "css/components/ErrorBoundary.css";
 
 class ErrorBoundary extends React.Component {
@@ -27,21 +27,23 @@ class ErrorBoundary extends React.Component {
 	render() {
 		if (this.state.error !== null) {
 			return (
-				<Row>
-					<Col xs="6">
-						<Card inverse body color="danger">
-							<CardTitle>An error has occurred</CardTitle>
-							<CardText>Something went wrong and this application has crashed</CardText>
-							<Button styleName="toggle" onClick={this.toggleCollapse}>More information</Button>
-							<Collapse styleName="details" tag="pre" isOpen={this.state.collapsed}>
-								{
-									this.state.error.toString() +
-									this.state.errorInfo.componentStack
-								}
-							</Collapse>
-						</Card>
-					</Col>
-				</Row>
+				<Container>
+					<Row>
+						<Col xs={{size: 6, offset: 3}}>
+							<Card inverse body color="danger">
+								<CardTitle>An error has occurred</CardTitle>
+								<CardText>Something went wrong and this application has crashed</CardText>
+								<Button styleName="toggle" onClick={this.toggleCollapse}>More information</Button>
+								<Collapse styleName="details" tag="pre" isOpen={this.state.collapsed}>
+									{
+										this.state.error.toString() +
+										this.state.errorInfo.componentStack
+									}
+								</Collapse>
+							</Card>
+						</Col>
+					</Row>
+				</Container>
 			);
 		}
 		else {

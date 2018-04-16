@@ -1,0 +1,22 @@
+.main {
+	width: var(--size_piece);
+	height: var(--size_piece);
+	background-color: var(--color_pieceBg);
+	font-size: 10px;
+	color: var(--color_pieceFg);
+	text-align: center;
+}
+
+.onBoard {
+	composes: main;
+	position: absolute;
+	top: 7px;
+	left: 7px;
+	box-shadow: -2px -2px black;
+}
+
+.inHand {
+	composes: main;
+	margin-bottom: 8px;
+	margin-right: 8px;
+}

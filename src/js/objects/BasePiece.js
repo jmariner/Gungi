@@ -1,6 +1,6 @@
 export default class BasePiece {
 
-	constructor(startX, startY) {
+	constructor(startX, startY, owner) {
 
 		this.type = this.constructor.type;
 
@@ -16,7 +16,7 @@ export default class BasePiece {
 		this.oppositeSidePiece = null;
 
 		// 1 = top, 2 = bottom
-		this.owner = 1;
+		this.owner = owner;
 
 	}
 

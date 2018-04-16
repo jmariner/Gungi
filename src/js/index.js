@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import ErrorBoundary from "js/components/ErrorBoundary";
-import Board from "js/components/Board";
+import Game from "js/components/Game";
 import "css/global.css";
 import "lib/bootswatch-lux.min.css";
 
 ReactDOM.render(
 	<ErrorBoundary>
-		<Board/>
+		<Game/>
 	</ErrorBoundary>,
 	document.getElementById("root")
 );

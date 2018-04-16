@@ -1,27 +1,27 @@
 import React from "react";
+import PropTypes from "prop-types";
 import CSSModules from "react-css-modules";
 import styles from "css/components/Board.css";
 
+import BasePiece from "js/objects/BasePiece";
 import Square from "js/components/Square";
 
 class Board extends React.Component {
+
+	static propTypes = {
+		pieceMap: PropTypes.objectOf(
+			PropTypes.arrayOf(
+				PropTypes.instanceOf(BasePiece)
+			)
+		).isRequired,
+		squareSize: PropTypes.number.isRequired
+	};
 
 	static boardSize = 9;
 	static boardKeys = Array(Board.boardSize).fill(Array(Board.boardSize).fill());
 
 	constructor(props) {
 		super(props);
-
-		const pieceMap = {};
-		for (let row = 0; row < Board.boardSize; row++) {
-			for (let col = 0; col < Board.boardSize; col++) {
-				pieceMap[Board.getLocation(row, col)] = [null, null, null];
-			}
-		}
-
-		this.state = {
-			pieceMap
-		};
 
 		// for function-value use in .map
 		this.renderRow = this.renderRow.bind(this);
@@ -33,7 +33,7 @@ class Board extends React.Component {
 
 	renderSquare(row, col) {
 		const location = Board.getLocation(row, col);
-		const pieces = this.state.pieceMap[location];
+		const pieces = this.props.pieceMap[location];
 		return <Square
 			key={location}
 			location={location}
@@ -51,8 +51,14 @@ class Board extends React.Component {
 	}
 
 	render() {
+
+		const style = {
+			"--size_square": this.props.squareSize + "px",
+			"--size_piece": (this.props.squareSize * 0.5) + "px"
+		};
+
 		return (
-			<div styleName="main">
+			<div styleName="main" style={style}>
 				{Board.boardKeys.map(this.renderRow)}
 			</div>
 		);

@@ -1,8 +1,18 @@
 :root {
-	--color_darkSide: #6a0d07;
-	--color_lightSide: #73800a;
+	--color_darkSide: #dadada;
+	--color_lightSide: #4e4e4e;
+	--color_pieceBg: #69e4ff;
+	--color_pieceFg: #000000;
+	--size_square: 60px;
+	--size_piece: 40px;
 }
 
-body {
+body, :global(#root) {
 	background-color: #222;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
