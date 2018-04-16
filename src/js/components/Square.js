@@ -8,7 +8,9 @@ import styles from "css/components/Square.css";
 class Square extends React.Component {
 
 	static propTypes = {
+		// whether or not this is a dark square
 		dark: PropTypes.bool.isRequired,
+		// location name, e.g. "A4"
 		location: PropTypes.string.isRequired,
 		// piece tower. array of three pieces, with index representing the tier. this means the last element is on top
 		pieces: PropTypes.arrayOf(PropTypes.instanceOf(BasePiece)).isRequired
@@ -25,9 +27,12 @@ class Square extends React.Component {
 					{this.props.location}
 				</div>
 				<div styleName="pieces">
-					{this.props.pieces.map((v, i) => "T" + i + " " + v).join("\n")}
+					{
+						this.props.pieces.map(
+							(piece, tier) => `T${tier+1} ${piece == null ? "null" : piece.constructor.name}`
+						).join("\n")
+					}
 				</div>
-
 			</div>
 		);
 	}

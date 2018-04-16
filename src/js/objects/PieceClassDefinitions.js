@@ -2,6 +2,8 @@ import BasePiece from "./BasePiece";
 
 class Samurai extends BasePiece {
 
+	static type = 0;
+
 	constructor(startX, startY) {
 		super(startX, startY);
 	}
@@ -37,6 +39,8 @@ class Samurai extends BasePiece {
 
 class Ninja extends BasePiece {
 
+	static type = 1;
+
 	constructor(startX, startY) {
 		super(startX, startY);
 	}
@@ -67,6 +71,8 @@ class Ninja extends BasePiece {
 
 class Catapult extends BasePiece {
 
+	static type = 2;
+
 	constructor(startX, startY) {
 		super(startX, startY);
 	}
@@ -79,6 +85,8 @@ class Catapult extends BasePiece {
 
 class Fortress extends BasePiece {
 
+	static type = 3;
+
 	constructor(startX, startY) {
 		super(startX, startY);
 	}
@@ -90,6 +98,8 @@ class Fortress extends BasePiece {
 }
 
 class HiddenDragon extends BasePiece {
+
+	static type = 4;
 
 	constructor(startX, startY) {
 		super(startX, startY);
@@ -116,6 +126,8 @@ class HiddenDragon extends BasePiece {
 }
 
 class Captain extends BasePiece {
+
+	static type = 5;
 
 	constructor(startX, startY) {
 		super(startX, startY);
@@ -161,6 +173,8 @@ class Captain extends BasePiece {
 
 class Prodigy extends BasePiece {
 
+	static type = 6;
+
 	constructor(startX, startY) {
 		super(startX, startY);
 	}
@@ -187,6 +201,8 @@ class Prodigy extends BasePiece {
 }
 
 class Archer extends BasePiece {
+
+	static type = 7;
 
 	constructor(startX, startY) {
 		super(startX, startY);
@@ -225,6 +241,8 @@ class Archer extends BasePiece {
 
 class Soldier extends BasePiece {
 
+	static type = 8;
+
 	constructor(startX, startY) {
 		super(startX, startY);
 	}
@@ -258,6 +276,8 @@ class Soldier extends BasePiece {
 
 class Pistol extends BasePiece {
 
+	static type = 9;
+
 	constructor(startX, startY) {
 		super(startX, startY);
 	}
@@ -288,6 +308,8 @@ class Pistol extends BasePiece {
 }
 
 class Pike extends BasePiece {
+
+	static type = 10;
 
 	constructor(startX, startY) {
 		super(startX, startY);
@@ -322,6 +344,8 @@ class Pike extends BasePiece {
 }
 
 class Jounin extends BasePiece {
+
+	static type = 11;
 
 	constructor(startX, startY) {
 		super(startX, startY);
@@ -365,6 +389,8 @@ class Jounin extends BasePiece {
 
 class Lance extends BasePiece {
 
+	static type = 12;
+
 	constructor(startX, startY) {
 		super(startX, startY);
 	}
@@ -392,6 +418,8 @@ class Lance extends BasePiece {
 }
 
 class DragonKing extends BasePiece {
+
+	static type = 13;
 
 	constructor(startX, startY) {
 		super(startX, startY);
@@ -422,6 +450,8 @@ class DragonKing extends BasePiece {
 
 class Phoenix extends BasePiece {
 
+	static type = 14;
+
 	constructor(startX, startY) {
 		super(startX, startY);
 	}
@@ -450,6 +480,8 @@ class Phoenix extends BasePiece {
 }
 
 class Arrow extends BasePiece {
+
+	static type = 15;
 
 	constructor(startX, startY) {
 		super(startX, startY);
@@ -490,6 +522,8 @@ class Arrow extends BasePiece {
 
 class BronzeSoldier extends BasePiece {
 
+	static type = 16;
+
 	constructor(startX, startY) {
 		super(startX, startY);
 	}
@@ -506,6 +540,8 @@ class BronzeSoldier extends BasePiece {
 }
 
 class SilverSoldier extends BasePiece {
+
+	static type = 17;
 
 	constructor(startX, startY) {
 		super(startX, startY);
@@ -538,6 +574,8 @@ class SilverSoldier extends BasePiece {
 
 class GoldSoldier extends BasePiece {
 
+	static type = 18;
+
 	constructor(startX, startY) {
 		super(startX, startY);
 	}
@@ -560,6 +598,8 @@ class GoldSoldier extends BasePiece {
 }
 
 class Commander extends BasePiece {
+
+	static type = 19;
 
 	constructor(startX, startY) {
 		super(startX, startY);

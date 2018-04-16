@@ -11,3 +11,7 @@ ReactDOM.render(
 	</ErrorBoundary>,
 	document.getElementById("root")
 );
+
+// export some objects into the global scope
+export  * from "js/objects/PieceClassDefinitions";
+export { default as BasePiece } from "js/objects/BasePiece";

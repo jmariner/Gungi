@@ -18,7 +18,9 @@ module.exports = {
 	output: {
 		path: resPath("dist"),
 		filename: "js/[name].js",
-		crossOriginLoading: "anonymous"
+		crossOriginLoading: "anonymous",
+		libraryTarget: "var",
+		library: ["gungi"]
 	},
 	module: {
 		rules: [
