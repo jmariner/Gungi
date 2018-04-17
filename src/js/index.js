@@ -15,3 +15,4 @@ ReactDOM.render(
 // export some objects into the global scope
 export  * from "js/objects/PieceClassDefinitions";
 export { default as BasePiece } from "js/objects/BasePiece";
+export { default as Vars, State } from "js/Vars";

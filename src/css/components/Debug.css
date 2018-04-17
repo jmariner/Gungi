@@ -1,0 +1,12 @@
+.main {
+	position: fixed;
+	bottom: 4px;
+	left: 4px;
+	color: gray;
+	margin: 0;
+	z-index: 1000;
+}
+
+.main:hover {
+	color: white;
+}

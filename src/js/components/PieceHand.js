@@ -3,14 +3,14 @@ import PropTypes from "prop-types";
 import CSSModules from "react-css-modules";
 import styles from "css/components/PieceHand.css";
 
-import Constants from "js/Constants";
+import Vars from "js/Vars";
 import BasePiece from "js/objects/BasePiece";
 import Piece from "js/components/Piece";
 
 class PieceHand extends React.Component {
 
 	static propTypes = {
-		player: PropTypes.oneOf([Constants.TOP_PLAYER, Constants.BOTTOM_PLAYER]).isRequired,
+		player: PropTypes.oneOf([Vars.TOP_PLAYER, Vars.BOTTOM_PLAYER]).isRequired,
 		pieceArray: PropTypes.arrayOf(PropTypes.instanceOf(BasePiece)).isRequired
 	};
 

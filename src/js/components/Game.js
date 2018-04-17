@@ -2,7 +2,8 @@ import React from "react";
 import CSSModules from "react-css-modules";
 import styles from "css/components/Game.css";
 
-import Constants from "js/Constants";
+import Vars, { State } from "js/Vars";
+import Debug from "js/components/Debug";
 import Board from "js/components/Board";
 import PieceHand from "js/components/PieceHand";
 
@@ -19,23 +20,20 @@ class Game extends React.Component {
 		}
 
 		this.state = {
+			currentState: State.PLAYING, // temporary. default: NOT_STARTED
 			squareSize: undefined,
 			boardPieceMap: pieceMap,
 			handPieceMap: {
-				[Constants.TOP_PLAYER]: Array(25).fill(null),
-				[Constants.BOTTOM_PLAYER]: Array(25).fill(null)
+				[Vars.TOP_PLAYER]: Array(25).fill(null),
+				[Vars.BOTTOM_PLAYER]: Array(25).fill(null)
 			}
 		};
 
 	}
 
-	static otherPlayer(player) {
-		return player === Constants.TOP_PLAYER ? Constants.BOTTOM_PLAYER : Constants.TOP_PLAYER;
-	}
-
 	updateSquareSize = () => {
 		this.setState({
-			squareSize: (window.innerHeight - (Board.boardSize + 1) - 2 * Constants.VERT_PADDING) / Board.boardSize
+			squareSize: (window.innerHeight - (Board.boardSize + 1) - 2 * Vars.VERT_PADDING) / Board.boardSize
 		});
 	}
 
@@ -47,20 +45,29 @@ class Game extends React.Component {
 	render() {
 
 		return (
-			<div styleName="main">
-				<PieceHand
-					player={Constants.TOP_PLAYER}
-					pieceArray={this.state.handPieceMap[Constants.TOP_PLAYER]}
+			<React.Fragment>
+				<div styleName="main">
+					{
+						this.state.currentState !== State.PLAYING &&
+							<div styleName="cover"></div>
+					}
+					<PieceHand
+						player={Vars.TOP_PLAYER}
+						pieceArray={this.state.handPieceMap[Vars.TOP_PLAYER]}
+					/>
+					<Board
+						pieceMap={this.state.boardPieceMap}
+						squareSize={this.state.squareSize}
+					/>
+					<PieceHand
+						player={Vars.BOTTOM_PLAYER}
+						pieceArray={this.state.handPieceMap[Vars.BOTTOM_PLAYER]}
+					/>
+				</div>
+				<Debug
+					gameState={this.state}
 				/>
-				<Board
-					pieceMap={this.state.boardPieceMap}
-					squareSize={this.state.squareSize}
-				/>
-				<PieceHand
-					player={Constants.BOTTOM_PLAYER}
-					pieceArray={this.state.handPieceMap[Constants.BOTTOM_PLAYER]}
-				/>
-			</div>
+			</React.Fragment>
 		)
 	}
 
