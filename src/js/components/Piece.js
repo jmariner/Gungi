@@ -25,19 +25,18 @@ class Piece extends React.Component {
 	render() {
 
 		// temporary piece rendering
-		const thisPiece = this.props.piece;
+		const { piece: thisPiece, inHand, tier } = this.props;
 		const name = thisPiece === null ? "null" : thisPiece.constructor.name;
-		const tier = this.props.tier;
 		const offset = (30 * tier) + "%";
 
-		const thisStyle = this.props.inHand ? {} : {
+		const thisStyle = inHand ? {} : {
 			transform: `translate(${offset}, ${offset})`,
 			zIndex: tier + 10
 		};
 
 		return (
 			<div
-				styleName={this.props.inHand ? "inHand" : "onBoard"}
+				styleName={inHand ? "inHand" : "onBoard"}
 				style={thisStyle}
 			>
 				{name}

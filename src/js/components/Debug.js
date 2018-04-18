@@ -7,14 +7,13 @@ class Debug extends React.Component {
 		super(props);
 	}
 
-	getDebugData() {
-		const { currentState } = this.props.gameState;
-		return `State: ${currentState.name}`
-	}
-
 	render() {
+
+		const { currentState } = this.props.gameState;
+		const debugData = `State: ${currentState.name}`;
+
 		return (
-			<pre styleName="main">{this.getDebugData()}</pre>
+			<pre styleName="main">{debugData}</pre>
 		);
 	}
 }

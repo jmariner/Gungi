@@ -44,31 +44,28 @@ class Game extends React.Component {
 
 	render() {
 
+		const { currentState, handPieceMap, boardPieceMap, squareSize } = this.state;
+
 		return (
 			<React.Fragment>
 				<div styleName="main">
-					{
-						this.state.currentState !== State.PLAYING &&
-							<div styleName="cover"></div>
-					}
+					{currentState !== State.PLAYING && <div styleName="cover"></div>}
 					<PieceHand
 						player={Vars.TOP_PLAYER}
-						pieceArray={this.state.handPieceMap[Vars.TOP_PLAYER]}
+						pieceArray={handPieceMap[Vars.TOP_PLAYER]}
 					/>
 					<Board
-						pieceMap={this.state.boardPieceMap}
-						squareSize={this.state.squareSize}
+						pieceMap={boardPieceMap}
+						squareSize={squareSize}
 					/>
 					<PieceHand
 						player={Vars.BOTTOM_PLAYER}
-						pieceArray={this.state.handPieceMap[Vars.BOTTOM_PLAYER]}
+						pieceArray={handPieceMap[Vars.BOTTOM_PLAYER]}
 					/>
 				</div>
-				<Debug
-					gameState={this.state}
-				/>
+				<Debug gameState={this.state}/>
 			</React.Fragment>
-		)
+		);
 	}
 
 }

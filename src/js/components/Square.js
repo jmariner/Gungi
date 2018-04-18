@@ -19,10 +19,9 @@ class Square extends React.Component {
 
 	constructor(props) {
 		super(props);
-		this.renderPiece = this.renderPiece.bind(this);
 	}
 
-	renderPiece(piece, tier) {
+	renderPiece = (piece, tier) => {
 		return (
 			<Piece
 				key={this.props.location + "-" + tier}
@@ -33,13 +32,16 @@ class Square extends React.Component {
 	}
 
 	render() {
+
+		const { dark, location, pieces } = this.props;
+
 		return (
-			<div styleName={this.props.dark ? "dark" : "light"}>
+			<div styleName={dark ? "dark" : "light"}>
 				<div styleName="location">
-					{this.props.location}
+					{location}
 				</div>
 				<div styleName="pieces">
-					{this.props.pieces.map(this.renderPiece)}
+					{pieces.map(this.renderPiece)}
 				</div>
 			</div>
 		);

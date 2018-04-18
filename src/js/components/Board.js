@@ -22,27 +22,23 @@ class Board extends React.Component {
 
 	constructor(props) {
 		super(props);
-
-		// for function-value use in .map
-		this.renderRow = this.renderRow.bind(this);
 	}
 
 	static getLocation(row, col) {
 		return "ABCDEFGHI"[col] + (row + 1);
 	}
 
-	renderSquare(row, col) {
+	renderSquare = (row, col) => {
 		const location = Board.getLocation(row, col);
-		const pieces = this.props.pieceMap[location];
 		return <Square
 			key={location}
 			location={location}
 			dark={row % 2 !== col % 2}
-			pieces={pieces}
+			pieces={this.props.pieceMap[location]}
 		/>;
 	}
 
-	renderRow(row, rowNum) {
+	renderRow = (row, rowNum) => {
 		return (
 			<div key={rowNum} styleName="row">
 				{row.map((v, cellNum) => this.renderSquare(rowNum, cellNum))}
@@ -52,9 +48,11 @@ class Board extends React.Component {
 
 	render() {
 
+		const { squareSize } = this.props;
+
 		const style = {
-			"--size_square": this.props.squareSize + "px",
-			"--size_piece": (this.props.squareSize * 0.5) + "px"
+			"--size_square": squareSize + "px",
+			"--size_piece": (squareSize * 0.5) + "px"
 		};
 
 		return (

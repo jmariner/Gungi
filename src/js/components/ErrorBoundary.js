@@ -12,11 +12,9 @@ class ErrorBoundary extends React.Component {
 			errorInfo: null,
 			collapsed: false
 		};
-
-		this.toggleCollapse = this.toggleCollapse.bind(this);
 	}
 
-	toggleCollapse() {
+	toggleCollapse = () => {
 		this.setState({collapsed: !this.state.collapsed});
 	}
 
@@ -25,7 +23,10 @@ class ErrorBoundary extends React.Component {
 	}
 
 	render() {
-		if (this.state.error !== null) {
+
+		const { error, errorInfo, collapsed } = this.state;
+
+		if (error !== null) {
 			return (
 				<Container>
 					<Row>
@@ -34,11 +35,8 @@ class ErrorBoundary extends React.Component {
 								<CardTitle>An error has occurred</CardTitle>
 								<CardText>Something went wrong and this application has crashed</CardText>
 								<Button styleName="toggle" onClick={this.toggleCollapse}>More information</Button>
-								<Collapse styleName="details" tag="pre" isOpen={this.state.collapsed}>
-									{
-										this.state.error.toString() +
-										this.state.errorInfo.componentStack
-									}
+								<Collapse styleName="details" tag="pre" isOpen={collapsed}>
+									{error.toString() + errorInfo.componentStack}
 								</Collapse>
 							</Card>
 						</Col>
