@@ -10,8 +10,22 @@ function resPath(pth) {
 const extractCss = new ExtractTextPlugin("css/[name].css");
 const extractModuleCss = new ExtractTextPlugin("css/bundle.min.css");
 
+const statsConfig = {
+	modules: false,
+	hash: false
+};
+
 module.exports = {
 //	devtool: "cheap-eval-source-map",
+	devServer: {
+		contentBase: resPath("dist"),
+		stats: statsConfig,
+		open: true,
+		overlay: true,
+		compress: true,
+		port: 8080
+	},
+	stats: statsConfig,
 	entry: {
 		index: resPath("src/js/index.js")
 	},
@@ -69,9 +83,5 @@ module.exports = {
 			template: "src/html/index.html",
 			filename: "index.html"
 		})
-	],
-	stats: {
-		modules: false,
-		hash: false
-	}
+	]
 }
