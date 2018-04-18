@@ -21,7 +21,7 @@ const Samurai = {
 			]
 		];
 
-		const tier = Math.min(2, tier);
+		tier = Math.min(2, tier);
 
 		return moveSets[tier-1].includes([dx, dy]);
 	}
@@ -46,7 +46,7 @@ const Ninja = {
 			]
 		];
 
-		const tier = Math.min(2, tier);
+		tier = Math.min(2, tier);
 
 		return moveSets[tier-1].includes([dx, dy]);
 	}
@@ -222,7 +222,7 @@ const Pistol = {
 			]
 		];
 
-		const tier = Math.min(2, tier);
+		tier = Math.min(2, tier);
 
 		return moveSets[tier-1].includes([dx, dy]);
 
@@ -251,7 +251,7 @@ const Pike = {
 			]
 		];
 
-		const tier = Math.min(2, tier);
+		tier = Math.min(2, tier);
 
 		return moveSets[tier-1].includes([dx, dy]);
 
@@ -426,7 +426,7 @@ const SilverSoldier = {
 			]
 		];
 
-		const tier = Math.min(2, tier);
+		tier = Math.min(2, tier);
 
 		return moveSets[tier-1].includes([dx, dy]);
 

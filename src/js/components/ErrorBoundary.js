@@ -1,9 +1,15 @@
 import React from "react";
+import PropTypes from "prop-types";
 import CSSModules from "react-css-modules";
 import { Container, Row, Col, Card, CardTitle, CardText, Button, Collapse } from "reactstrap";
 import styles from "css/components/ErrorBoundary.css";
 
 class ErrorBoundary extends React.Component {
+
+	static propTypes = {
+		children: PropTypes.node
+	};
+
 	constructor(props) {
 		super(props);
 

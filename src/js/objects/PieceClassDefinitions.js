@@ -292,7 +292,7 @@ class Lance extends BasePiece {
 		// TODO check for pieces in path
 
 		if (tier === 1) {
-			return dy === 0 && Math.sign(dx) === dir;
+			return dy === 0 && Math.sign(dx) === direction;
 		}
 		else {
 			return [

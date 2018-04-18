@@ -1,9 +1,22 @@
+import PropTypes from "prop-types";
+
 function enumFrom(...values) {
 	const result = {};
-	for (const val of values)
+	for (const val of values) {
 		result[val] = {
 			get name() { return val; }
 		};
+	}
+
+	Object.defineProperty(result, "_propType", {
+		enumerable: false,
+		configurable: false,
+		writable: false,
+		value: PropTypes.shape({
+			name: PropTypes.string
+		})
+	});
+
 	return result;
 }
 
