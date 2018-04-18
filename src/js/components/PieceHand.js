@@ -24,7 +24,7 @@ class PieceHand extends React.Component {
 				<div styleName="title">Player {this.props.player} Hand ({this.props.pieceArray.length})</div>
 				<div styleName="pieces">
 					{
-						this.props.pieceArray.map((piece, idx) => <Piece key={idx} piece={piece} inHand={true}/>)
+						this.props.pieceArray.map((piece, idx) => <Piece key={idx} piece={piece} inHand/>)
 					}
 				</div>
 			</div>

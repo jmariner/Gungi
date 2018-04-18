@@ -28,7 +28,6 @@ class Square extends React.Component {
 				key={this.props.location + "-" + tier}
 				piece={piece}
 				tier={tier}
-				inHand={false}
 			/>
 		)
 	}

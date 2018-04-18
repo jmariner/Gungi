@@ -15,7 +15,7 @@ class Piece extends React.Component {
 				return new Error(`Invalid property ${propName} on ${compName}. Validation failed.`);
 		},
 		piece: PropTypes.instanceOf(BasePiece),
-		inHand: PropTypes.bool.isRequired
+		inHand: PropTypes.bool
 	};
 
 	constructor(props) {
